@@ -1,0 +1,1 @@
+exports.plus= x => x + 2
