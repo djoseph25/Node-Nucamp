@@ -2,6 +2,8 @@ const express = require('express');
 const morgan = require('morgan');
 const bodyParser = require('body-parser');
 const campsiteRouter = require('./routes/campsiteRouter');
+const promotionRouter = require('./promotionRouter/promotionRouter')
+const partnerRouter = require('./partnerRouter/partnerRouter')
 
 const hostname = 'localhost';
 const port = 3000;
@@ -11,6 +13,10 @@ app.use(morgan('dev'));
 app.use(bodyParser.json());
 
 app.use('/campsites', campsiteRouter);
+
+app.use('/promotions', promotionRouter);
+
+app.use('/partners', partnerRouter);
 
 // NOTE Morgan will log the file for me now
 //ANCHOR _dirname will go to the obsolut path
