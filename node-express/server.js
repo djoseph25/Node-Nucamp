@@ -30,5 +30,5 @@ app.use((req, res) => {
 });
 
 app.listen(port, hostname, () => {
-	console.log(`Server running at http://${hostname}:${port}/`);
+	console.log(`Servers running at http://${hostname}:${port}/`);
 });
