@@ -52,6 +52,7 @@ app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
 app.use('/favorites', favoriteRouter);
+app.use('/upload', uploadRouter);
 //NOTE catch error 
 app.use(function (req, res, next) {
 	next(createError(404));
