@@ -18,6 +18,12 @@ const connect = mongoose.connect(url, {
 	useNewUrlParser: true,
 	useUnifiedTopology: true,
 });
+const promotionRouter = require("./routes/promotionRouter");
+const partnerRouter = require("./routes/partnerRouter");
+const uploadRouter = require("./routes/uploadRouter");
+const favoriteRouter = require('./routes/favoriteRouter');
+
+
 
 connect.then(
 	() => console.log(`Connected Correctly to the Server at: ${url}`),
@@ -45,7 +51,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
 app.use('/partners', partnerRouter);
-
+app.use('/favorites', favoriteRouter);
 //NOTE catch error 
 app.use(function (req, res, next) {
 	next(createError(404));
